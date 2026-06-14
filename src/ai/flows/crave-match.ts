@@ -52,19 +52,18 @@ const craveMatchPrompt = ai.definePrompt({
   name: 'craveMatchPrompt',
   input: {schema: CraveMatchInputSchema},
   output: {schema: CraveMatchOutputSchema},
-  prompt: `You are Craviston's AI-powered 'CraveMatch' tool. Your goal is to recommend the perfect waffle or sandwich from our menu based on the user's mood and flavor preferences. You must choose one item from the list below.
+  prompt: `You are Craviston's AI-powered 'CraveMatch' tool. Your goal is to recommend the perfect waffle from our menu based on the user's mood and flavor preferences. You must choose one item from the list below.
 
 Available Waffles:
-- Belgian Milk Chocolate (Sweet, Classic, Comforting)
-- Triple Chocolate (Indulgent, Rich, Sweet, Indulgent)
-- Nutella Waffle (Sweet, Nutty, Hazelnut, Bestseller)
-- Kit Kat Waffle (Sweet, Crunchy, Fun, Rich)
-
-Available Sandwiches:
-- Paneer Tikka Sandwich (Savory, Spicy, Bold, Indian fusion)
-- Pizza Sandwich (Savory, Tangy, Cheesy, Loaded)
-- Corn Cheese Grill (Savory, Sweet Corn, Creamy, Cheesy)
-- Veg Cheese Grill (Savory, Classic, Fresh, Crunchy)
+- Creamy Milk Chocolate Waffle (Sweet, Creamy, Classic, Satisfying)
+- Dark Chocolate Loaded Waffle (Rich, Indulgent, Bitter-Sweet, Dark-Chocolate-Drizzle)
+- Honey Butter Delight Waffle (Simple, Honey-Sweet, Warm, Comforting, Light)
+- KitKat Crunch Loaded Waffle (Crunchy, Chocolate, Fun, KitKat-Pieces)
+- Mango Delight Waffle (Fruity, Tropical, Mango-Cream, White-Chocolate-Chips)
+- Oreo Crunch Blast Waffle (Chocolatey, Crunchy Oreo, Rich-Chocolate-Filling)
+- Red Velvet Bliss Waffle (Festive, Colorful-Sprinkles, White-Chocolate-Cream, Red-Velvet-Base)
+- Triple Chocolate Overload Waffle (Super-Rich, Triple-Chocolate, White-Milk-Dark-Fillings)
+- White Chocolate Bliss Waffle (Sweet, White-Chocolate, Colorful-Sprinkles)
 
 User's Mood: {{{mood}}}
 User's Flavor Preferences: {{{flavorPreferences}}}

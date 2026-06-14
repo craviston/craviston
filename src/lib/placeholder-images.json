@@ -1,52 +1,58 @@
 {
   "placeholderImages": [
     {
-      "id": "waffle-milk-choco",
-      "description": "Belgian Milk Chocolate Waffle",
-      "imageUrl": "https://picsum.photos/seed/milkchoco/600/400",
-      "imageHint": "belgian milk chocolate waffle"
+      "id": "creamy-milk-chocolate",
+      "description": "Creamy Milk Chocolate Waffle",
+      "imageUrl": "/images/Creamy Milk Chocolate Waffle.png",
+      "imageHint": "creamy milk chocolate waffle"
     },
     {
-      "id": "waffle-triple-choco",
-      "description": "Triple Chocolate Waffle",
-      "imageUrl": "https://picsum.photos/seed/triplechoco/600/400",
-      "imageHint": "triple chocolate waffle"
+      "id": "dark-chocolate-loaded",
+      "description": "Dark Chocolate Loaded Waffle",
+      "imageUrl": "/images/Dark Chocolate Loaded Waffle.png",
+      "imageHint": "dark chocolate loaded waffle"
     },
     {
-      "id": "waffle-nutella",
-      "description": "Nutella Waffle",
-      "imageUrl": "https://picsum.photos/seed/nutella/600/400",
-      "imageHint": "nutella waffle"
+      "id": "honey-butter-delight",
+      "description": "Honey Butter Delight Waffle",
+      "imageUrl": "/images/Honey Butter Delight Waffle.png",
+      "imageHint": "honey butter delight waffle"
     },
     {
-      "id": "waffle-kitkat",
-      "description": "Kit Kat Waffle",
-      "imageUrl": "https://picsum.photos/seed/kitkat/600/400",
-      "imageHint": "kitkat waffle"
+      "id": "kitkat-crunch-loaded",
+      "description": "KitKat Crunch Loaded Waffle",
+      "imageUrl": "/images/KitKat Crunch Loaded Waffle.png",
+      "imageHint": "kitkat crunch loaded waffle"
     },
     {
-      "id": "sandwich-paneer-tikka",
-      "description": "Paneer Tikka Sandwich",
-      "imageUrl": "https://picsum.photos/seed/paneertikka/600/400",
-      "imageHint": "paneer tikka sandwich"
+      "id": "mango-delight",
+      "description": "Mango Delight Waffle",
+      "imageUrl": "/images/Mango.png",
+      "imageHint": "mango delight waffle"
     },
     {
-      "id": "sandwich-pizza",
-      "description": "Pizza Sandwich",
-      "imageUrl": "https://picsum.photos/seed/pizzasandwich/600/400",
-      "imageHint": "pizza sandwich"
+      "id": "oreo-crunch-blast",
+      "description": "Oreo Crunch Blast Waffle",
+      "imageUrl": "/images/Oreo Crunch Blast Waffle.png",
+      "imageHint": "oreo crunch blast waffle"
     },
     {
-      "id": "sandwich-corn-cheese",
-      "description": "Corn Cheese Grill Sandwich",
-      "imageUrl": "https://picsum.photos/seed/corncheese/600/400",
-      "imageHint": "corn cheese sandwich"
+      "id": "red-velvet-bliss",
+      "description": "Red Velvet Bliss Waffle",
+      "imageUrl": "/images/Red Velvet.png",
+      "imageHint": "red velvet bliss waffle"
     },
     {
-      "id": "sandwich-veg-cheese",
-      "description": "Veg Cheese Grill Sandwich",
-      "imageUrl": "https://picsum.photos/seed/vegcheese/600/400",
-      "imageHint": "veg cheese sandwich"
+      "id": "triple-chocolate-overload",
+      "description": "Triple Chocolate Overload Waffle",
+      "imageUrl": "/images/Triple Chocolate Overload Waffle New.png",
+      "imageHint": "triple chocolate overload waffle"
+    },
+    {
+      "id": "white-chocolate-bliss",
+      "description": "White Chocolate Bliss Waffle",
+      "imageUrl": "/images/White Chocolate Bliss Waffle.png",
+      "imageHint": "white chocolate bliss waffle"
     }
   ]
 }

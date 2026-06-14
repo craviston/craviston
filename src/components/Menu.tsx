@@ -13,67 +13,75 @@ const ZOMATO_URL = "https://www.zomato.com/mumbai/craviston-gokuldham?amp=1"
 const MENU_ITEMS = [
   { 
     id: 1, 
-    name: "Belgian Milk Chocolate", 
-    price: 165, 
+    name: "Creamy Milk Chocolate Waffle", 
+    price: 129, 
     category: "Waffles", 
-    description: "Classic crispy waffle base loaded with smooth melted premium Belgian milk chocolate.", 
+    description: "Soft waffle sandwich filled with smooth and creamy milk chocolate, balanced and satisfying.", 
     image: PlaceHolderImages[0] 
   },
   { 
     id: 2, 
-    name: "Triple Chocolate", 
-    price: 190, 
+    name: "Dark Chocolate Loaded Waffle", 
+    price: 119, 
     category: "Waffles", 
-    description: "Indulgent layers of white, milk, and dark chocolate on a freshly baked waffle.", 
+    description: "Crispy waffle sandwich filled with rich dark chocolate and finished with a smooth chocolate drizzle.", 
     image: PlaceHolderImages[1] 
   },
   { 
     id: 3, 
-    name: "Nutella Waffle", 
-    price: 200, 
+    name: "Honey Butter Delight Waffle", 
+    price: 119, 
     category: "Waffles", 
-    description: "Our bestseller: fresh waffle topped with a rich, generous spread of authentic Nutella.", 
+    description: "Warm waffle sandwich with a light honey drizzle for a simple and comforting sweetness.", 
     image: PlaceHolderImages[2] 
   },
   { 
     id: 4, 
-    name: "Kit Kat Waffle", 
-    price: 180, 
+    name: "KitKat Crunch Loaded Waffle", 
+    price: 149, 
     category: "Waffles", 
-    description: "A delightful combination of crushed Kit Kat and chocolate sauce over a crispy waffle.", 
+    description: "Warm waffle sandwich loaded with crunchy KitKat pieces and chocolate filling for the perfect bite.", 
     image: PlaceHolderImages[3] 
   },
   { 
     id: 5, 
-    name: "Paneer Tikka Sandwich", 
-    price: 210, 
-    category: "Sandwiches", 
-    description: "Tandoori-spiced paneer chunks with crunchy veggies in a perfectly grilled sandwich.", 
+    name: "Mango Delight Waffle", 
+    price: 139, 
+    category: "Waffles", 
+    description: "Golden waffle filled with luscious mango cream and topped with white chocolate chips for a fruity tropical delight.", 
     image: PlaceHolderImages[4] 
   },
   { 
     id: 6, 
-    name: "Pizza Sandwich", 
-    price: 190, 
-    category: "Sandwiches", 
-    description: "All the flavors of a pizza—tangy sauce, olives, and corn—stuffed inside grilled bread.", 
+    name: "Oreo Crunch Blast Waffle", 
+    price: 149, 
+    category: "Waffles", 
+    description: "Chocolate waffle sandwich packed with crushed Oreo and rich chocolate filling for a crunchy treat.", 
     image: PlaceHolderImages[5] 
   },
   { 
     id: 7, 
-    name: "Corn Cheese Grill", 
-    price: 170, 
-    category: "Sandwiches", 
-    description: "Sweet corn and double cheese, grilled until gooey and golden brown.", 
+    name: "Red Velvet Bliss Waffle", 
+    price: 149, 
+    category: "Waffles", 
+    description: "Rich red velvet waffle layered with smooth white chocolate cream and finished with colorful sprinkles for a festive sweet treat.", 
     image: PlaceHolderImages[6] 
   },
   { 
     id: 8, 
-    name: "Veg Cheese Grill", 
-    price: 160, 
-    category: "Sandwiches", 
-    description: "The classic Indian street-style grilled sandwich loaded with fresh veggies and cheese.", 
+    name: "Triple Chocolate Overload Waffle", 
+    price: 129, 
+    category: "Waffles", 
+    description: "Rich chocolate waffle layered with silky dark, milk, and white chocolate fillings for the ultimate triple chocolate indulgence.", 
     image: PlaceHolderImages[7] 
+  },
+  { 
+    id: 9, 
+    name: "White Chocolate Bliss Waffle", 
+    price: 139, 
+    category: "Waffles", 
+    description: "Golden waffle sandwich filled with creamy white chocolate and topped with colorful sprinkles.", 
+    image: PlaceHolderImages[8] 
   },
 ]
 
