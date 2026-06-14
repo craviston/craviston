@@ -1,0 +1,52 @@
+{
+  "placeholderImages": [
+    {
+      "id": "waffle-milk-choco",
+      "description": "Belgian Milk Chocolate Waffle",
+      "imageUrl": "https://picsum.photos/seed/milkchoco/600/400",
+      "imageHint": "belgian milk chocolate waffle"
+    },
+    {
+      "id": "waffle-triple-choco",
+      "description": "Triple Chocolate Waffle",
+      "imageUrl": "https://picsum.photos/seed/triplechoco/600/400",
+      "imageHint": "triple chocolate waffle"
+    },
+    {
+      "id": "waffle-nutella",
+      "description": "Nutella Waffle",
+      "imageUrl": "https://picsum.photos/seed/nutella/600/400",
+      "imageHint": "nutella waffle"
+    },
+    {
+      "id": "waffle-kitkat",
+      "description": "Kit Kat Waffle",
+      "imageUrl": "https://picsum.photos/seed/kitkat/600/400",
+      "imageHint": "kitkat waffle"
+    },
+    {
+      "id": "sandwich-paneer-tikka",
+      "description": "Paneer Tikka Sandwich",
+      "imageUrl": "https://picsum.photos/seed/paneertikka/600/400",
+      "imageHint": "paneer tikka sandwich"
+    },
+    {
+      "id": "sandwich-pizza",
+      "description": "Pizza Sandwich",
+      "imageUrl": "https://picsum.photos/seed/pizzasandwich/600/400",
+      "imageHint": "pizza sandwich"
+    },
+    {
+      "id": "sandwich-corn-cheese",
+      "description": "Corn Cheese Grill Sandwich",
+      "imageUrl": "https://picsum.photos/seed/corncheese/600/400",
+      "imageHint": "corn cheese sandwich"
+    },
+    {
+      "id": "sandwich-veg-cheese",
+      "description": "Veg Cheese Grill Sandwich",
+      "imageUrl": "https://picsum.photos/seed/vegcheese/600/400",
+      "imageHint": "veg cheese sandwich"
+    }
+  ]
+}

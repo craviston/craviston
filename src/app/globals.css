@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 68% 90%; /* #f8e9d4 Peach Cream */
+    --foreground: 15 27% 21%; /* #432E27 Deep Mocha */
+    --card: 35 68% 95%;
+    --card-foreground: 15 27% 21%;
+    --popover: 35 68% 90%;
+    --popover-foreground: 15 27% 21%;
+    --primary: 14 69% 49%; /* #D44D25 Burnt Orange */
+    --primary-foreground: 35 68% 90%;
+    --secondary: 15 27% 21%;
+    --secondary-foreground: 35 68% 90%;
+    --muted: 35 30% 80%;
+    --muted-foreground: 15 27% 40%;
+    --accent: 14 69% 49%;
+    --accent-foreground: 35 68% 90%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 15 27% 21% / 0.1;
+    --input: 15 27% 21% / 0.1;
+    --ring: 14 69% 49%;
+    --radius: 0.75rem;
+  }
+  .dark {
+    --background: 15 27% 21%;
+    --foreground: 35 68% 90%;
+    --primary: 14 69% 49%;
+    --primary-foreground: 35 68% 90%;
+    --border: 35 68% 90% / 0.1;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(212, 77, 37, 0.4);
+  }
+  .bg-grid-white {
+    background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: ticker 60s linear infinite;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.watermark {
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  opacity: 0.05;
+  line-height: 1;
+}
