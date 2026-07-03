@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 import { Star, ArrowRight } from "lucide-react"
 
 const ZOMATO_URL = "https://www.zomato.com/mumbai/craviston-gokuldham?amp=1"
+const SWIGGY_URL = "https://www.swiggy.com/city/mumbai/craviston-palava-city-rest1395661"
 
 const MENU_ITEMS = [
   { 
@@ -175,14 +176,22 @@ export default function Menu() {
           ))}
         </div>
 
-        <div className="mt-16 md:mt-20 text-center reveal-on-scroll">
+        <div className="mt-16 md:mt-20 flex flex-col sm:flex-row justify-center gap-6 items-center reveal-on-scroll">
           <Button
             size="lg"
             variant="outline"
-            className="w-full sm:w-auto border-2 border-foreground font-headline text-2xl md:text-3xl px-8 md:px-16 py-8 md:py-10 rounded-full hover:bg-foreground hover:text-background transition-all shadow-2xl"
+            className="w-full sm:w-auto border-2 border-foreground font-headline text-2xl md:text-3xl px-8 md:px-16 py-8 md:py-10 rounded-full hover:bg-zomato hover:border-zomato hover:text-zomato-foreground transition-all shadow-2xl"
             onClick={() => window.open(ZOMATO_URL, "_blank")}
           >
             EXPLORE FULL MENU ON ZOMATO
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="w-full sm:w-auto border-2 border-foreground font-headline text-2xl md:text-3xl px-8 md:px-16 py-8 md:py-10 rounded-full hover:bg-swiggy hover:border-swiggy hover:text-swiggy-foreground transition-all shadow-2xl"
+            onClick={() => window.open(SWIGGY_URL, "_blank")}
+          >
+            EXPLORE FULL MENU ON SWIGGY
           </Button>
         </div>
       </div>

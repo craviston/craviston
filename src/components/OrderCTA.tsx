@@ -4,6 +4,7 @@
 import { Button } from "@/components/ui/button"
 
 const ZOMATO_URL = "https://www.zomato.com/mumbai/craviston-gokuldham?amp=1"
+const SWIGGY_URL = "https://www.swiggy.com/city/mumbai/craviston-palava-city-rest1395661"
 
 export default function OrderCTA() {
   return (
@@ -14,15 +15,24 @@ export default function OrderCTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <h2 className="font-headline text-6xl md:text-[12rem] leading-none mb-6 reveal-on-scroll uppercase tracking-tight">ORDER NOW</h2>
-        <p className="font-body text-lg md:text-2xl mb-12 opacity-80 reveal-on-scroll">Available on Zomato — delivered to your door in under 30 minutes.</p>
+        <p className="font-body text-lg md:text-2xl mb-12 opacity-80 reveal-on-scroll">Available on Zomato & Swiggy — delivered to your door in under 30 minutes.</p>
 
-        <Button
-          size="lg"
-          className="w-full sm:w-auto bg-zomato hover:bg-zomato/90 text-zomato-foreground font-headline text-2xl md:text-3xl h-auto py-6 md:py-8 px-10 md:px-16 rounded-full shadow-[0_0_30px_rgba(226,55,68,0.4)] transition-all transform hover:scale-105 active:scale-95 reveal-on-scroll"
-          onClick={() => window.open(ZOMATO_URL, "_blank")}
-        >
-          ORDER ON ZOMATO
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <Button
+            size="lg"
+            className="w-full sm:w-auto bg-zomato hover:bg-zomato/90 text-zomato-foreground font-headline text-2xl md:text-3xl h-auto py-6 md:py-8 px-10 md:px-16 rounded-full shadow-[0_0_30px_rgba(226,55,68,0.4)] transition-all transform hover:scale-105 active:scale-95 reveal-on-scroll"
+            onClick={() => window.open(ZOMATO_URL, "_blank")}
+          >
+            ORDER ON ZOMATO
+          </Button>
+          <Button
+            size="lg"
+            className="w-full sm:w-auto bg-swiggy hover:bg-swiggy/90 text-swiggy-foreground font-headline text-2xl md:text-3xl h-auto py-6 md:py-8 px-10 md:px-16 rounded-full shadow-[0_0_30px_rgba(252,128,25,0.4)] transition-all transform hover:scale-105 active:scale-95 reveal-on-scroll"
+            onClick={() => window.open(SWIGGY_URL, "_blank")}
+          >
+            ORDER ON SWIGGY
+          </Button>
+        </div>
       </div>
     </section>
   )

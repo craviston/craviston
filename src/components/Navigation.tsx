@@ -9,6 +9,7 @@ import { Menu, X } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 
 const ZOMATO_URL = "https://www.zomato.com/mumbai/craviston-gokuldham?amp=1"
+const SWIGGY_URL = "https://www.swiggy.com/city/mumbai/craviston-palava-city-rest1395661"
 
 const NAV_LINKS = [
   { name: "MENU", href: "#menu" },
@@ -46,18 +47,32 @@ export default function Navigation() {
           </a>
         ))}
       </div>
-      <Button
-        className={cn(
-          "bg-zomato hover:bg-zomato/90 text-zomato-foreground font-headline text-lg px-6 py-6 rounded-full",
-          mobile && "w-full"
-        )}
-        onClick={() => {
-          window.open(ZOMATO_URL, "_blank")
-          setOpen(false)
-        }}
-      >
-        ORDER ON ZOMATO
-      </Button>
+      <div className={cn("flex gap-3", mobile ? "flex-col w-full" : "items-center")}>
+        <Button
+          className={cn(
+            "bg-zomato hover:bg-zomato/90 text-zomato-foreground font-headline text-lg px-6 py-6 rounded-full",
+            mobile && "w-full"
+          )}
+          onClick={() => {
+            window.open(ZOMATO_URL, "_blank")
+            setOpen(false)
+          }}
+        >
+          ORDER ON ZOMATO
+        </Button>
+        <Button
+          className={cn(
+            "bg-swiggy hover:bg-swiggy/90 text-swiggy-foreground font-headline text-lg px-6 py-6 rounded-full",
+            mobile && "w-full"
+          )}
+          onClick={() => {
+            window.open(SWIGGY_URL, "_blank")
+            setOpen(false)
+          }}
+        >
+          ORDER ON SWIGGY
+        </Button>
+      </div>
     </>
   )
 

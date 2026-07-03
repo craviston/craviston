@@ -50,6 +50,10 @@ export default {
         zomato: {
           DEFAULT: '#E23744',
           foreground: '#FFFFFF',
+        },
+        swiggy: {
+          DEFAULT: '#FC8019',
+          foreground: '#FFFFFF',
         }
       },
       borderRadius: {

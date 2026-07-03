@@ -3,6 +3,7 @@ import { Instagram, Facebook } from "lucide-react"
 import Logo from "@/components/Logo"
 
 const ZOMATO_URL = "https://www.zomato.com/mumbai/craviston-gokuldham?amp=1"
+const SWIGGY_URL = "https://www.swiggy.com/city/mumbai/craviston-palava-city-rest1395661"
 const INSTAGRAM_URL = "https://www.instagram.com/craviston/"
 const FACEBOOK_URL = "https://www.facebook.com/people/Craviston/61590774712152/"
 
@@ -26,6 +27,7 @@ export default function Footer() {
             <li><a href="#about" className="hover:text-primary transition-colors">OUR STORY</a></li>
             <li><a href="#why-us" className="hover:text-primary transition-colors">WHY CRAVISTON</a></li>
             <li><a href={ZOMATO_URL} target="_blank" className="text-zomato hover:opacity-80 transition-opacity">ORDER ON ZOMATO</a></li>
+            <li><a href={SWIGGY_URL} target="_blank" className="text-swiggy hover:opacity-80 transition-opacity">ORDER ON SWIGGY</a></li>
           </ul>
         </div>
 
@@ -34,6 +36,9 @@ export default function Footer() {
           <div className="flex justify-center md:justify-start gap-4 md:gap-6 flex-wrap">
             <a href={ZOMATO_URL} target="_blank" className="bg-background/10 p-3 rounded-full hover:bg-zomato hover:text-white transition-all flex items-center justify-center">
               <span className="font-headline text-xl px-2">ZOMATO</span>
+            </a>
+            <a href={SWIGGY_URL} target="_blank" className="bg-background/10 p-3 rounded-full hover:bg-swiggy hover:text-white transition-all flex items-center justify-center">
+              <span className="font-headline text-xl px-2">SWIGGY</span>
             </a>
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="bg-background/10 p-4 rounded-full hover:bg-primary transition-all flex items-center justify-center">
               <Instagram className="w-6 h-6" />

@@ -92,12 +92,20 @@ export default function CraveMatchAI() {
                   </div>
                 </div>
 
-                <Button
-                  className="w-full bg-zomato hover:bg-zomato/90 text-zomato-foreground font-headline text-xl md:text-2xl h-auto py-4 rounded-xl"
-                  onClick={() => window.open("https://www.zomato.com", "_blank")}
-                >
-                  ORDER NOW ON ZOMATO
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button
+                    className="w-full bg-zomato hover:bg-zomato/90 text-zomato-foreground font-headline text-xl md:text-2xl h-auto py-4 rounded-xl"
+                    onClick={() => window.open("https://www.zomato.com/mumbai/craviston-gokuldham?amp=1", "_blank")}
+                  >
+                    ORDER ON ZOMATO
+                  </Button>
+                  <Button
+                    className="w-full bg-swiggy hover:bg-swiggy/90 text-swiggy-foreground font-headline text-xl md:text-2xl h-auto py-4 rounded-xl"
+                    onClick={() => window.open("https://www.swiggy.com/city/mumbai/craviston-palava-city-rest1395661", "_blank")}
+                  >
+                    ORDER ON SWIGGY
+                  </Button>
+                </div>
               </div>
             ) : (
               <div className="h-full border-4 border-dashed border-primary/20 rounded-3xl flex flex-col items-center justify-center p-8 md:p-12 text-center text-muted-foreground">
