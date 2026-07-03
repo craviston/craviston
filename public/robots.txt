@@ -1,0 +1,28 @@
+# Allow all crawlers, search engines, and AI models to access the website
+User-agent: *
+Allow: /
+
+# Explicitly ensure AI models and search crawlers are allowed
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /

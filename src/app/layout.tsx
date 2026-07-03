@@ -4,6 +4,14 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Craviston | Waffles & Sandwiches',
   description: 'Cloud Kitchen delivering bold waffles and stacked sandwiches. Order fresh on Zomato.',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({
