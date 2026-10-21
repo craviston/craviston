@@ -51,6 +51,23 @@ If you already have a Firebase project for the website, reuse it. Otherwise:
    - `www.craviston.in`
    - `localhost` (already there by default - useful for testing)
 
+> ### This step is what makes sign-in work. Skipping it is the single most
+> likely reason Google sign-in fails.
+>
+> If the site's domain is not in this list, Firebase rejects the sign-in with
+> `auth/unauthorized-domain` and no popup ever appears - the page just says
+> sign-in failed. The list for a fresh project contains only `localhost` and
+> the project's own `*.firebaseapp.com` / `*.web.app` domains, so
+> `craviston.in` has to be added by hand.
+>
+> Verify it any time with:
+>
+> ```bash
+> curl "https://identitytoolkit.googleapis.com/v1/projects?key=YOUR_API_KEY"
+> ```
+>
+> Your domain must appear in `authorizedDomains` in the response.
+
 > The game opens a Google popup. It falls back to a full-page redirect if the
 > popup is blocked. Inside the Instagram or Facebook in-app browser Google
 > refuses to sign in at all, so the game shows a banner telling players to open
@@ -186,6 +203,32 @@ writing to Firestore directly.
 | Mobile | Test on a real phone. Swipe to steer. The score row stays visible. |
 | Incognito | The demo banner should be **hidden**, and sign-in should still work. |
 | In-app browser | Open the link inside Instagram. The "open in Chrome" notice appears. |
+
+### If sign-in fails
+
+The game now shows the exact Firebase error code instead of a generic
+message. Read it and match it here:
+
+| Message / code | Cause | Fix |
+| --- | --- | --- |
+| `auth/unauthorized-domain` | The site domain is not in Firebase **Authentication > Authorized domains** | Add `craviston.in`. This is the usual cause. |
+| `auth/popup-blocked` | The browser blocked the popup | Allow popups, or use the redirect fallback (already automatic) |
+| `auth/operation-not-supported-in-this-environment` | Google provider not enabled | Firebase console > Authentication > Sign-in method > Google > Enable |
+| `auth/network-request-failed` | No internet or a blocked request | Check the network |
+| Demo banner is showing | `config.js` has an empty `apiKey` | Paste the Firebase config into `public/config.js` and redeploy |
+
+The game also checks itself on every load: if the current domain is missing from
+the project's authorized-domains list, a red banner appears at the top of the
+page saying so - before the player tries to sign in. If you ever see that
+banner on the live site, the Firebase console needs updating.
+
+To check the authorized-domains list without the console:
+
+```bash
+curl "https://identitytoolkit.googleapis.com/v1/projects?key=YOUR_API_KEY"
+```
+
+Your domain has to appear under `authorizedDomains` in that response.
 
 ---
 

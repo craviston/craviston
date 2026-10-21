@@ -156,6 +156,7 @@
   </div>
 
   <div class="banner demo" id="demo-banner" hidden>Demo mode: Firebase isn't connected yet, so sign-in and scores are local to this device only.</div>
+  <div class="banner demo" id="auth-warn" hidden></div>
   <div class="banner warn" id="iab-banner" hidden>
     Google sign-in doesn't work inside Instagram or Facebook's built-in browser. Open this page in Chrome or Safari to play.<br>
     <button id="copy-link">Copy link</button><a id="chrome-link" href="#" hidden>Open in Chrome</a>
@@ -387,6 +388,25 @@ function maskName(full) {
   const first = parts[0].slice(0, 14);
   return parts.length > 1 ? first + ' ' + parts[parts.length - 1][0].toUpperCase() + '.' : first;
 }
+/* Turns a Firebase auth error into something a human can act on. The raw
+   error code matters - "auth/unauthorized-domain" means the site domain is
+   missing from Firebase > Authentication > Authorized domains. */
+function authErrorMessage(e) {
+  const code = (e && e.code) || '';
+  if (code === 'auth/unauthorized-domain')
+    return 'Sign-in is blocked for this site. Add this site’s domain to Firebase → Authentication → Authorized domains.';
+  if (code === 'auth/popup-blocked')
+    return 'Your browser blocked the sign-in popup. Allow popups for this site, or open it outside an in-app browser.';
+  if (code === 'auth/operation-not-supported-in-this-environment')
+    return 'Google sign-in is not enabled for this Firebase project.';
+  if (code === 'auth/network-request-failed')
+    return 'Couldn’t reach Google. Check your internet and try again.';
+  if (code === 'auth/account-exists-with-different-credential')
+    return 'This email already uses a different sign-in method.';
+  if (code === 'auth/too-many-requests')
+    return 'Too many attempts. Wait a minute and try again.';
+  return 'Sign-in failed' + (code ? ' (' + code + ')' : '') + '. Please try again.';
+}
 function haversineKm(a, b) {
   const R = 6371, rad = d => d * Math.PI / 180;
   const dLat = rad(b.lat - a.lat), dLng = rad(b.lng - a.lng);
@@ -455,7 +475,7 @@ async function makeFirebaseBackend() {
   provider.setCustomParameters({ prompt: 'select_account' });
   const toUser = u => u ? { uid: u.uid, name: u.displayName || 'Player', email: u.email || '', photo: u.photoURL || '' } : null;
   return {
-    async init() { try { await authM.getRedirectResult(auth); } catch (e) { console.warn(e); } },
+    async init() { try { await authM.getRedirectResult(auth); } catch (e) { console.warn(e); toast(authErrorMessage(e)); } },
     onAuth(fn) { authM.onAuthStateChanged(auth, u => fn(toUser(u))); },
     async signIn() {
       try { await authM.signInWithPopup(auth, provider); }
@@ -792,7 +812,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden && mod
 
 /* ---------- buttons ---------- */
 $('#btn-google').addEventListener('click', async () => {
-  try { await backend.signIn(); } catch (e) { console.warn(e); toast("Sign-in didn't work. Please open this page in Chrome or Safari and try again."); }
+  try { await backend.signIn(); } catch (e) { console.warn(e); toast(authErrorMessage(e)); }
 });
 $('#btn-signout').addEventListener('click', () => backend.signOut());
 $('#btn-play').addEventListener('click', startGame);
@@ -838,6 +858,26 @@ tickStrip(); setInterval(tickStrip, 30000);
       a.href = 'intent://' + location.host + location.pathname + location.search + '#Intent;scheme=https;package=com.android.chrome;end';
     }
   }
+})();
+
+/* ---------- pre-flight: is this domain allowed to sign in? ----------
+   Firebase blocks Google sign-in from any domain that is not listed under
+   Authentication > Authorized domains, and the only symptom the player sees
+   is a sign-in that silently fails. Check up front and say so plainly. */
+(async function checkAuthDomain() {
+  if (DEMO || !FIREBASE_CONFIG.apiKey) return;
+  try {
+    const res = await fetch('https://identitytoolkit.googleapis.com/v1/projects?key=' + encodeURIComponent(FIREBASE_CONFIG.apiKey));
+    if (!res.ok) return;
+    const data = await res.json();
+    const allowed = data.authorizedDomains || [];
+    const host = location.hostname;
+    if (allowed.indexOf(host) === -1) {
+      const el = $('#auth-warn');
+      el.textContent = 'Sign-in is blocked on ' + host + '. Add this domain in Firebase → Authentication → Authorized domains.';
+      el.hidden = false;
+    }
+  } catch (e) { /* offline or API blocked - the sign-in attempt will report it */ }
 })();
 
 /* ---------- boot ---------- */
