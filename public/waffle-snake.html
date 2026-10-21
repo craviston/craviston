@@ -10,8 +10,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- Campaign + Firebase config. Bump ?v=1 to ?v=2 after editing config.js. -->
-<script src="/config.js?v=1"></script>
+<!-- Campaign + Firebase config. Loaded through a cache-busting query so the
+     file can be edited directly on the server and picked up on the next
+     reload - no rebuild, no manual version bump. -->
+<script>
+  window.__CONFIG_READY = new Promise(function (resolve, reject) {
+    var s = document.createElement('script');
+    s.src = '/config.js?ts=' + Date.now();
+    s.onload = function () { resolve(); };
+    s.onerror = function () { reject(new Error('Could not load /config.js')); };
+    document.head.appendChild(s);
+  });
+</script>
 <style>
   :root{
     --cream:#FCF9F4;
@@ -260,6 +270,13 @@
 <noscript>This game needs JavaScript. Please turn it on and reload.</noscript>
 
 <script type="module">
+/* Wait for /config.js to finish loading before reading it. */
+try {
+  await window.__CONFIG_READY;
+} catch (e) {
+  console.warn('config.js could not be loaded - using built-in defaults');
+}
+
 /* ===========================================================
    CONFIG
 
@@ -277,7 +294,7 @@ const DEFAULTS = {
     projectId: '',
     appId: ''
   },
-  outlet: { lat: 19.2183, lng: 73.0867 },   // Craviston outlet, Dombivli
+  outlet: { lat: 19.159025, lng: 73.077988 },   // Craviston outlet, Gokuldham
   radiusKm: 10,
   campaign: {
     start:   '2026-10-21T00:00:00+05:30',

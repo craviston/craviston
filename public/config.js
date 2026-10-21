@@ -4,8 +4,8 @@
    This file is served as-is from the deployed site. Edit it on the server
    and reload the page - no rebuild, no redeploy of the Next.js app required.
 
-   After editing, bump the version query string in waffle-snake.html
-   (<script src="/config.js?v=1">) to bust the browser cache.
+   The game loads this file with a cache-busting query string, so a change
+   here is picked up on the very next page load. Nothing else to bump.
 
    While `firebase.apiKey` is empty the game runs in DEMO mode:
    sign-in is simulated with a name prompt and scores are stored only in
@@ -16,6 +16,8 @@ window.CRAVISTON_CONFIG = {
   firebase: {
     // From Firebase console > Project settings > General > Your apps > Web app
     // (the SDK setup snippet starts with "const firebaseConfig = {")
+    // A Firebase web API key is a public client identifier, not a secret -
+    // it ships in every browser. Access is controlled by firestore.rules.
     apiKey: 'AIzaSyBVT0v3-LfKdUR3k6fvlCNWO-c_lf3mtGo',
     authDomain: 'craviston-snake.firebaseapp.com',
     projectId: 'craviston-snake',

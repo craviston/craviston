@@ -110,8 +110,14 @@ window.CRAVISTON_CONFIG = {
 Firebase App Hosting's file viewer (or via any CDN you use) and the change goes
 live on the next reload - **no rebuild required**.
 
-> Bump `?v=1` to `?v=2` in `public/waffle-snake.html` whenever you change
-> `config.js`, otherwise browsers may serve the cached copy.
+> The game requests `config.js` with a cache-busting query string, so a change
+> is picked up on the very next page load. There is no version number to bump
+> and no stale-cache trap. If the demo banner is still showing after a config
+> change, hard-reload once (Ctrl+Shift+R) to clear the page itself from cache.
+
+> Keep `public/config.js` in the repo in sync with what is live on the server.
+> A redeploy overwrites `config.js` with the committed copy, so a stale
+> committed copy would silently put the game back into demo mode.
 
 While `firebase.apiKey` is empty the game stays in **demo mode**: sign-in is a
 name prompt and scores live only in that browser's localStorage.
