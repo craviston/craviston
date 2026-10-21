@@ -1,6 +1,7 @@
 "use client"
 
 import Navigation from "@/components/Navigation"
+import CampaignBanner from "@/components/CampaignBanner"
 import Hero from "@/components/Hero"
 import Ticker from "@/components/Ticker"
 import Menu from "@/components/Menu"
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navigation />
+      <CampaignBanner />
       <Hero />
       <Ticker />
       <Menu />

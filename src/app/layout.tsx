@@ -1,9 +1,35 @@
 import type {Metadata} from 'next';
 import './globals.css';
 
+const SITE_URL = 'https://craviston.in';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: 'Craviston | Waffles & Sandwiches',
   description: 'Cloud Kitchen delivering bold waffles and stacked sandwiches. Order fresh on Zomato.',
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    type: 'website',
+    url: SITE_URL,
+    siteName: 'Craviston',
+    title: 'Craviston | Waffles & Sandwiches',
+    description: 'Hot waffles. Stacked sandwiches. Made fresh, delivered fast — on Zomato & Swiggy.',
+    images: [
+      {
+        url: '/icon.png',
+        width: 512,
+        height: 512,
+        alt: 'Craviston',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Craviston | Waffles & Sandwiches',
+    description: 'Hot waffles. Stacked sandwiches. Made fresh, delivered fast — on Zomato & Swiggy.',
+  },
   robots: {
     index: true,
     follow: true,

@@ -26,3 +26,5 @@ Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
+
+Sitemap: https://craviston.in/sitemap.xml
