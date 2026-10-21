@@ -16,14 +16,14 @@ window.CRAVISTON_CONFIG = {
   firebase: {
     // From Firebase console > Project settings > General > Your apps > Web app
     // (the SDK setup snippet starts with "const firebaseConfig = {")
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    appId: ''
+    apiKey: 'AIzaSyBVT0v3-LfKdUR3k6fvlCNWO-c_lf3mtGo',
+    authDomain: 'craviston-snake.firebaseapp.com',
+    projectId: 'craviston-snake',
+    appId: '1:124904832835:web:2481b569716371c1c179f6'
   },
 
   // The kitchen players must be near. Scored games only count inside radiusKm.
-  outlet: { lat: 19.2183, lng: 73.0867 },
+  outlet: { lat: 19.159025, lng: 73.077988 },
   radiusKm: 10,
 
   // All timestamps are IST (+05:30).
